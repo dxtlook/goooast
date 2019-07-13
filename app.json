@@ -7,18 +7,10 @@
        "description": "Gost 版本号",
        "value": "2.8.1"
      },
-    "METHOD": {
-       "description": "加密算法，支持：aes-128-cfb, aes-192-cfb, aes-256-cfb, bf-cfb, cast5-cfb, des-cfb, rc4-md5, rc4-md5-6, chacha20, salsa20, rc4, table.",
-       "value": "chacha20"
-     },
-     "PASSWORD": {
-       "description": "用于加密传输的密码",
-       "value": "ss123456"
-     },
-     "PORT": {
-       "description": "设置监听端口，该地址是客户端需要连接的端口",
-       "value": "8100"
-     }
+    "CONFIG": {
+       "description": "默认的启动配置，详情见 https://docs.ginuerzh.xyz/gost",
+       "value": "-L=ss+mws://chacha20:gost123456@:8080"
+    }
   },
   "stack": "container",
   "website": "https://github.com/wizos/gost-heroku",

@@ -3,4 +3,4 @@ wget -O gost.tar.gz  http://github.com/ginuerzh/gost/releases/download/v${VER}/g
 tar zxf gost.tar.gz 
 cd /gost/gost_${VER}_linux_amd64
 chmod +x gost
-./gost -L=ss+mws://$METHOD:$PASSWORD@:$PORT
+./gost $CONFIG

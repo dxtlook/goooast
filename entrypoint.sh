@@ -1,6 +1,6 @@
 cd /gost
-wget -O gost.tar.gz  http://github.com/ginuerzh/gost/releases/download/v${VER}/gost_${VER}_linux_amd64.tar.gz
-tar zxf gost.tar.gz 
-cd /gost/gost_${VER}_linux_amd64
+wget -O gost.gz  http://github.com/ginuerzh/gost/releases/download/v${VER}/gost-linux-amd64-${VER}.gz
+gzip -b gost.gz 
+cd /gost/gost-linux-amd64-${VER}
 chmod +x gost
 ./gost -L=${MODE}://${METHOD}:${PASSWORD}@:${PORT}

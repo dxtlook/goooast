@@ -13,7 +13,7 @@
 
 # entrypoint.sh 方式
 FROM heroku/heroku:18
-RUN mkdir -m 777 /gost
+# RUN mkdir -m 777 /gost
  
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh 

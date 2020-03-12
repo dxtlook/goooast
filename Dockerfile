@@ -7,16 +7,15 @@ ENV TLS_PORT=4433 PORT=8080
 #  && curl -sL https://github.com/xiaokaixuan/gost-heroku/releases/download/v${VER}/gost_${VER}_linux_amd64.tar.gz | tar zx \
 #  && mv gost_${VER}_linux_amd64 gost && chmod a+x gost/gost
 
-RUN mkdir -m 777 /gost
 RUN apk add --no-cache curl \
-  && curl -sL http://github.com/ginuerzh/gost/releases/download/v${VER}/gost-linux-amd64-${VER}.gz \
-  && gunzip -c gost-linux-amd64-${VER}.gz > gost/gost && chmod a+x gost/gost
+  && curl -sL http://github.com/ginuerzh/gost/releases/download/v${VER}/gost-linux-amd64-${VER}.gz | tar zx \
+  && chmod a+x gost
 
-WORKDIR /gost
+#WORKDIR /gost
 EXPOSE ${TLS_PORT} $PORT
 
-CMD exec /gost/gost -L=tls://:${TLS_PORT}/:$PORT -L=ss+mws://$METHOD:$PASSWORD@:$PORT
-
+#CMD exec /gost/gost -L=tls://:${TLS_PORT}/:$PORT -L=ss+mws://$METHOD:$PASSWORD@:$PORT
+CMD exec /gost -L=tls://:${TLS_PORT}/:$PORT -L=ss+mws://$METHOD:$PASSWORD@:$PORT
 
 
 # Dockerfile 方式

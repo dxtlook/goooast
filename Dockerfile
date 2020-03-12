@@ -3,9 +3,12 @@ FROM alpine:3.6
 ENV VER=2.11.0 METHOD=aes-128-cfb PASSWORD=ss123456
 ENV TLS_PORT=4433 PORT=8080
 
-RUN apk add --no-cache curl \
-  && curl -sL https://github.com/xiaokaixuan/gost-heroku/releases/download/v${VER}/gost_${VER}_linux_amd64.tar.gz | tar zx \
-  && mv gost_${VER}_linux_amd64 gost && chmod a+x gost/gost
+#RUN apk add --no-cache curl \
+#  && curl -sL https://github.com/xiaokaixuan/gost-heroku/releases/download/v${VER}/gost_${VER}_linux_amd64.tar.gz | tar zx \
+#  && mv gost_${VER}_linux_amd64 gost && chmod a+x gost/gost
+
+RUN wget -O gost.gz http://github.com/ginuerzh/gost/releases/download/v${VER}/gost-linux-amd64-${VER}.gz
+  && mkdir -m 777 /gost && gunzip -c gost.gz > gost/gost && chmod a+x gost/gost
 
 WORKDIR /gost
 EXPOSE ${TLS_PORT} $PORT

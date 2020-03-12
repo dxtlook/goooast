@@ -10,7 +10,7 @@ ENV TLS_PORT=4433 PORT=8080
 RUN mkdir -m 777 /gost
 RUN apk add --no-cache curl \
   && curl -sL http://github.com/ginuerzh/gost/releases/download/v${VER}/gost-linux-amd64-${VER}.gz | tar zx \
-  && mv gost-linux-amd64 gost/gost && chmod a+x gost/gost
+  && gunzip -c gost-linux-amd64-2.11.0.gz > /gost/gost && chmod a+x gost/gost
 
 WORKDIR /gost
 EXPOSE ${TLS_PORT} $PORT

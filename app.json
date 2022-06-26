@@ -1,10 +1,10 @@
 {
-  "name": "Gost",
-  "description": "Deploy Gost to Heroku.",
-  "keywords": ["Gost"],
+  "name": "Gooo",
+  "description": "ggg",
+  "keywords": ["G"],
   "env": {
     "VER": {
-       "description": "Gost version",
+       "description": "ggg version",
        "value": "2.11.0"
      },
     "METHOD": {
@@ -13,10 +13,10 @@
      },
      "PASSWORD": {
        "description": "A password used to encrypt transfer.",
-       "value": "ss123456"
+       "value": ""
      }
   },
   "stack": "container",
-  "website": "https://github.com/xiaokaixuan/gost-heroku",
-  "repository": "https://github.com/xiaokaixuan/gost-heroku"
+  "website": "https://github.com/dxtlook/goooast",
+  "repository": "https://github.com/dxtlook/goooast"
  }
